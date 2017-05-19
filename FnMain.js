@@ -4,10 +4,25 @@
 var format=function(word,count){
     return word+' '+count;
 }
+
+var group=function (wordArray) {
+    return wordArray.reduce((Array,word)=>{
+    let entry=Array.find((e)=>e.word===word);
+    if(entry){
+        entry.count++;
+    }
+    else{
+        Array.push({word:word,count:1});
+    }
+    return Array;
+},[]);
+};
+
 function main(words) {
     if(words !==''){
         let wordArray=words.split(' ');
-        return wordArray.map((w)=>format(w,1)).join('\r\n');
+        let groupedWords=group(wordArray);
+        return groupedWords.map((e)=>format(e.word,e.count)).join('\r\n');
     }
     return ''
 }
