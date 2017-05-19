@@ -13,4 +13,9 @@ describe("Word Frequency",function(){
         var result=main('he');
         expect(result).toEqual('he 1');
     });
+
+    it("returns string given two different words",function () {
+        var result=main('he is');
+        expect(result).toEqual('he 1\r\nis 1');
+    });
 });
