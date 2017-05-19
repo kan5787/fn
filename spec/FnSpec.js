@@ -28,4 +28,9 @@ describe("Word Frequency",function(){
         var result=main('he is is');
         expect(result).toEqual('is 2\r\nhe 1');
     });
+    
+    it("returns string given words splited by multiple spaces",function () {
+        var result=main('he   is');
+        expect(result).toEqual('he 1\r\nis 1');
+    });
 });

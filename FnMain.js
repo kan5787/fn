@@ -20,7 +20,7 @@ var group=function (wordArray) {
 
 function main(words) {
     if(words !==''){
-        let wordArray=words.split(' ');
+        let wordArray=words.split(/\s+/);
         let groupedWords=group(wordArray);
         groupedWords.sort((x,y)=>y.count-x.count);
         return groupedWords.map((e)=>format(e.word,e.count)).join('\r\n');
