@@ -20,7 +20,12 @@ describe("Word Frequency",function(){
     })
 
     it("returns string given duplicated words",function () {
-        var result=main('he he is');
+        var result=main('he is he');
         expect(result).toEqual('he 2\r\nis 1');
+    });
+
+    it("returns string given duplicated word need to be sorted",function () {
+        var result=main('he is is');
+        expect(result).toEqual('is 2\r\nhe 1');
     });
 });
