@@ -8,4 +8,9 @@ describe("Word Frequency",function(){
         var result=main('');
         expect(result).toEqual('');
     });
+
+    it("returns string given one word",function () {
+        var result=main('he');
+        expect(result).toEqual('he 1');
+    });
 });

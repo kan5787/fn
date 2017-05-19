@@ -1,7 +1,10 @@
 /**
  * Created by Jolene on 2017/5/19.
  */
-function main() {
+function main(words) {
+    if(words !==''){
+        return words+' '+1;
+    }
     return ''
 }
 
